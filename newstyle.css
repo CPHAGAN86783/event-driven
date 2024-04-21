@@ -1,0 +1,229 @@
+/*import google font */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+ *,*::after, *::before {
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',serif;
+    display: fixed;
+    align-items: center;
+    justify-content: center;
+    min-height: 10vh;
+    background: rgb(231, 222, 222);
+}
+.wrapper{
+    max-width: 500px;
+    background: beige;
+    border-radius: 7px;
+    padding:10px 15px 5px;
+}
+header h1{
+    font-size: 27px;
+    font-weight: 500;
+}
+header p{
+    margin-top:  5px;
+    font-size: 18px;
+    color: darkgray;
+}
+.imputs{
+
+    margin: 20px 0 27px;
+}
+.imputs input{
+    height: 60px;
+    outline: none;
+    font-size: 16px;
+    padding: 0 17px;
+    border-radius: 5px;
+    border: 1px solid #999;
+}
+.inputs input :focus{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+
+}
+.inputs button{
+    width: 100%;
+    opacity: 0.7;
+    height: 56px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 17px;
+    color:#fff   ;
+    border-radius: 5px;
+    pointer-events: none;
+    background: #aa57cc;
+
+}
+
+/*action botton*/
+.inputs button.active{
+    position: absolute;
+    width: 100%;
+    outline: none;
+    font-size: 2.2em;
+    padding: 0 30px;
+    line-height: 80px;
+    border-radius: 10px;
+    opacity: 1;
+    pointer-events: auto;
+
+
+}
+.info-text{
+    display: none;
+    font-size: 19px;
+    text-align: center;
+    margin-bottom: 18px
+}
+.info-text{ 
+    color: #474747;
+
+}
+
+.thankYou{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border: 2px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: #fff;
+    width: 500px;
+    max-width: 80%;
+}
+
+.subm.active.active {
+    transform: translate(-50% ,-50%) scale(1);
+}
+
+.thankYou-header {
+     padding: 10px 15px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     border-bottom: 2px solid black;
+
+
+}
+
+.thankYou-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+
+}
+.thankYou-header .close-button{
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+    
+}
+.thankYou-body {
+    padding: 10px 15px;
+}
+
+#overlay {
+    position: fixed;
+    /* opacity: 0: */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    background: #f0faff;
+}
+   /*animated button*/
+.button{
+    position: relative;
+    padding: 10p 20px;
+    background:#7b2ae8;
+    border-radius: 6px;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: tronsform 0.2s ease ;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+
+}
+.button:active {
+    transform: scale(0.96);
+}
+
+.button::before,
+.button::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    width: 150%;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+.button.animate::before {
+    top: -70%;
+    background-image:radial-gradient(circle, #7b2ae8 20% transparent 20%),
+     radial-gradient(circle, transparent 20% #7b2ae8 20% transparent 20%),
+     radial-gradient(circle, transparent 20% #7b2ae8 ),
+     radial-gradient(circle, transparent 10% #7b2ae8 15% transparent 20%),
+     radial-gradient(circle, transparent 20% #7b2ae8 ),
+     radial-gradient(circle, transparent 20% #7b2ae8 ),
+     radial-gradient(circle, transparent 20% #7b2ae8 ),
+     radial-gradient(circle, transparent 20% #7b2ae8 );
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 18% 18%;
+    background-position: 5% 90%, 10% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,40% 90%,55% 90%, 70% 90%;
+    animation: topBubbles 0.6s ease-in-out forwards;
+}
+@keyframes topBubbles {
+   50%{background-position: 5% 90%, 10% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,40% 90%,55% 90%, 70% 90%;
+}
+100%{background-position: 5% 90%, 10% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,40% 90%,55% 90%, 70% 90%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+}
+    
+}
+
+.button.anumate::after {
+    bottom: -70%;
+    background-image:radial-gradient(circle, #7b2ae8 20% transparent 20%),
+    radial-gradient(circle, transparent 20% #7b2ae8 20% transparent 20%),
+    radial-gradient(circle, transparent 20% #7b2ae8 ),
+    radial-gradient(circle, transparent 10% #7b2ae8 15% transparent 20%),
+    radial-gradient(circle, transparent 20% #7b2ae8 ),
+    radial-gradient(circle, transparent 20% #7b2ae8 ),
+    radial-gradient(circle, transparent 20% #7b2ae8 ),
+    radial-gradient(circle, transparent 20% #7b2ae8 );
+   background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 18% 18%;
+   background-position: 5% 90%, 10% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,40% 90%,55% 90%, 70% 90%;
+   animation: topBubbles 0.6s ease-in-out forwards;
+}
+@keyframes bottomBubbles {
+  50%{background-position: 5% 90%, 10% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,40% 90%,55% 90%, 70% 90%;
+}
+100%{background-position: 5% 90%, 10% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,40% 90%,55% 90%, 70% 90%;
+   background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+}}
+
+
+
+
+
+
+
